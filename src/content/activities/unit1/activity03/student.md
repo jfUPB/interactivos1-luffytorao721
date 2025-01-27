@@ -4,7 +4,7 @@ Recurso: vas a leer sobre los conceptos básicos de diseño generativo en el sit
 
 Entrega: un breve glosario con la definición de Diseño Generativo y los tres conceptos clave, incluyendo la descripción de su interrelación.-->
 
-## Actividad # 3
+## Actividad 3
 
 
 ### Diseño innovador

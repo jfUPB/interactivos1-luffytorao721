@@ -28,4 +28,17 @@ else{
 ```
 Creo que esto se logra debido a que en el microbit el acelerometro es por así decirlo un botón c y como se logra observar en el código si recibe otra entrada diferente de A y B entonces se rellenará de verde.
 
+#### *Describe qué pasa en el punto 17 y cómo crees que esto se logre.*
+- Al oprimir el botón "Send Love" en el microbit se logra ver una carita feliz
 
+``` js
+ connectBtn = createButton('Connect to micro:bit');
+    connectBtn.position(80, 300);
+    connectBtn.mousePressed(connectBtnClick);
+    let sendBtn = createButton('Send Love');
+    sendBtn.position(220, 300);
+    sendBtn.mousePressed(sendBtnClick);
+    fill('white');
+    ellipse(width / 2, height / 2, 100, 100);
+```
+Se crea el boton Send love al oprimirlo se almacena en memoria y cuando se llama se ejecuta una función que hace hace una cara feliz y listo. 

@@ -49,6 +49,20 @@ function connectBtnClick() {
 }
 ```
 
+## Microbit
+
+```bloks
+basic.forever(function () {
+    if (input.buttonIsPressed(Button.A)) {
+        serial.writeString("A") // Envía 'A' cuando se presiona el botón A
+    } else if (input.buttonIsPressed(Button.B)) {
+        serial.writeString("B") // Envía 'B' cuando se presiona el botón B
+    }
+    basic.pause(100) // Espera 100ms para evitar enviar datos demasiado rápido
+})
+```
+
+
 ## Descripción del Proceso
 
 ### 1. **Comunicación entre el micro:bit y p5.js**

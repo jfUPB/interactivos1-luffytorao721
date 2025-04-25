@@ -48,3 +48,10 @@ uart.write(data)
 
 ![image](https://github.com/user-attachments/assets/eb3cfcfd-5951-4127-b672-b5f2f0820580)
 
+---
+
+## Hex 
+
+![image](https://github.com/user-attachments/assets/a3fd719d-c93e-464f-a95b-5d5a84b25d8d)
+
+

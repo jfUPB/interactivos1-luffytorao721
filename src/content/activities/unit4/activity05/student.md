@@ -11,26 +11,28 @@
 #### **2. Código Modificado para micro:bit**  
 **Cambios clave**:  
 - **Control por acelerómetro**: La posición X/Y del círculo se controla inclinando el micro:bit.  
-- **Botones A/B**:  
+- **Botones A/C**:  
   - **A**: Cambia el color del círculo.  
-  - **B**: Reinicia la posición al centro.  
+
+
 
 ```javascript
 let port, connectBtn;
 let microBitConnected = false;
 let microBitX, microBitY, microBitAState, microBitBState;
-
 let circleX, circleY;
 let circleSize = 50;
 let circleColor;
 
 function setup() {
   createCanvas(800, 600);
+
+  // Initialize the circle in the center
   circleX = width / 2;
   circleY = height / 2;
-  circleColor = color(255, 0, 0);
+  circleColor = color(255, 0, 0);  // Start with red color
 
-  // Configuración serial
+  // Setup serial connection
   port = createSerial();
   connectBtn = createButton("Conectar micro:bit");
   connectBtn.position(10, 10);
@@ -40,12 +42,12 @@ function setup() {
 function draw() {
   background(240);
 
-  // Dibujar círculo
+  // Draw the circle
   fill(circleColor);
   noStroke();
   ellipse(circleX, circleY, circleSize);
 
-  // Gestión de conexión
+  // Manage micro:bit connection
   if (!port.opened()) {
     connectBtn.html("Conectar micro:bit");
     microBitConnected = false;
@@ -69,23 +71,23 @@ function readMicrobitData() {
     let data = port.readUntil("\n");
     if (data) {
       let values = data.trim().split(",");
-      if (values.length === 4) {
-        // Mapear acelerómetro (-1024 a 1024) a coordenadas del canvas
+      if (values.length === 7) {
+        // Map accelerometer data to canvas coordinates
         microBitX = map(int(values[0]), -1024, 1024, 0, width);
         microBitY = map(int(values[1]), -1024, 1024, 0, height);
         microBitAState = values[2] === "true";
         microBitBState = values[3] === "true";
 
-        // Actualizar posición del círculo
+        // Update circle position
         circleX = microBitX;
         circleY = microBitY;
 
-        // Botón A: Cambiar color
+        // Button A: Change color
         if (microBitAState) {
-          circleColor = color(random(255), random(255), random(255));
+          circleColor = color(int(values[4]), int(values[5]), int(values[6])); // Use the color components from micro:bit
         }
 
-        // Botón B: Reiniciar posición
+        // Button B: Reset position
         if (microBitBState) {
           circleX = width / 2;
           circleY = height / 2;
@@ -144,7 +146,7 @@ while True:
 | **Estado** | **Imagen** | **Descripción** |  
 |------------|------------|-----------------|  
 | **Esperando conexión** |![image](https://github.com/user-attachments/assets/6bab5269-05c1-419c-b68c-ff99f42cd7e1)| Botón "Conectar micro:bit" visible. |  
-| **Círculo controlado por micro:bit** |  | El círculo se mueve al inclinar el micro:bit. |  
+| **Círculo controlado por micro:bit** |  ![image](https://github.com/user-attachments/assets/a8d4c908-f3bb-4fe5-8974-a59133d36345)| El círculo se mueve al inclinar el micro:bit. |  
 | **Botón A presionado** | | El círculo cambia de color aleatorio. |  
 
 ---

@@ -72,11 +72,6 @@ if accelerometer.was_gesture('shake'):
 2. **ASCII** sigue siendo relevante para prototipado y logs.  
 3. **Herramientas clave**:  
    - `struct.pack()` para empaquetado binario.  
-   - Terminal hexadecimal para depuración.  
-
-**Capturas de referencia**:  
-# Importante_montar
-
-**Próximos pasos**: Implementar el parser binario en p5.js usando `DataView`.  
+   - Terminal hexadecimal para depuración.   
 
 --- 

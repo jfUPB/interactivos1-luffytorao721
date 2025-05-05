@@ -1,5 +1,13 @@
 ### * Implementación de Protocolo Binario **
 
+-----
+
+![20250505_114448](https://github.com/user-attachments/assets/f487d390-349d-40ae-9bdf-087ebf0de3f8)
+
+
+
+
+
 **Problema inicial con ASCII:**
 En el protocolo anterior usábamos texto plano con:
 - **Comas** para separar valores (ej: `"512,284,True,False\n"`)

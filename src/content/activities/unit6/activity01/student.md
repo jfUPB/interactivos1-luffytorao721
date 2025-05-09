@@ -27,3 +27,5 @@ Esto confirma que el servidor Node.js está activo.
   ```  
 - **Consola del navegador (F12)**: Muestra eventos `positionUpdated` con coordenadas.  
 ![image](https://github.com/user-attachments/assets/5c137f59-ab09-4daf-8c9c-71691fc4235e)
+
+![image](https://github.com/user-attachments/assets/bbf68738-fe47-4c5d-99ed-62a2fafddab5)

@@ -1,5 +1,7 @@
 ### ** Análisis del Servidor (server.js)**  
 
+![image](https://github.com/user-attachments/assets/f596db35-ec01-45ab-8cf5-6870f9da1830)
+
 #### **1. Dependencias y módulos**  
 - **Ventajas de los módulos**: Evitan reinventar la rueda. Ejemplo: `express` simplifica rutas HTTP, `socket.io` maneja WebSockets por nosotros.  
 - **Reflexión**: Escribir todo desde cero sería como construir un auto sin piezas prefabricadas: posible, pero ineficiente.  
@@ -37,3 +39,5 @@
 
 
  confundido con `broadcast` 
+ ![image](https://github.com/user-attachments/assets/eb4b166e-71a4-4d6a-a471-2559b196147f)
+

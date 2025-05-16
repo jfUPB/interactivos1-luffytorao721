@@ -1,8 +1,8 @@
 
 
-## 🧠 **Análisis del código `server.js`**
+## **Análisis del código `server.js`**
 
-### 🔧 **Setup inicial del servidor**
+###  **Setup inicial del servidor**
 
 ```js
 const express = require('express');
@@ -24,7 +24,7 @@ const port = 3000;
 
 ---
 
-### 📂 **Servir archivos estáticos**
+###  **Servir archivos estáticos**
 
 ```js
 app.use(express.static('public'));

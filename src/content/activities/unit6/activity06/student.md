@@ -140,3 +140,23 @@ server.listen(port, () => {
 });
 ```
 ![image](https://github.com/user-attachments/assets/318c32d6-1643-464f-acb6-04acf63f7c98)
+
+**1. Rol del servidor Node.js**
+El server es el punto de encuentro: recibe mensajes de cada navegador y los reenvía. Sin él, los clientes no “ven” al otro porque, por seguridad, los navegadores no se conectan directo entre sí.
+
+**2. `socket.emit()` vs. `socket.broadcast.emit()`**
+
+* `socket.emit()` → envía a **todos**, incluido quien mandó.
+* `socket.broadcast.emit()` → envía a **todos menos** al que mandó.
+  Uso el primero para actualizaciones globales; el segundo cuando el emisor ya sabe la info y solo hace falta avisar a los demás.
+
+**3. Socket.IO vs. comunicación serial**
+
+* **Socket.IO**: ideal web-a-web; ventaja → mensaje estructurado y bidireccional en tiempo real; desventaja → necesita servidor y conexión Internet/LAN.
+* **Serial (ASCII/binario)**: perfecto para microcontroladores; ventaja → simple, sin red; desventaja → solo punto-a-punto y limitado en distancia.
+
+**4. HTTP vs. WebSockets (Socket.IO)**
+HTTP sirve los archivos iniciales (HTML, JS, p5). WebSockets toma el relevo para la charla en tiempo real sin recargar página.
+
+**5. Lo que más me sorprendió**
+Que con pocas líneas (`io.on`, `socket.emit`) puedo hacer que dos pantallas separadas reaccionen instantáneamente; sentir esa “magia” de interacción en tiempo real fue brutal.
